@@ -3,6 +3,40 @@
 import type { NextPage } from 'next';
 import TeachersSection from '@/components/Teachers';
 import React, { useRef, useEffect } from 'react';
+import Testimonials from '@/components/Testimonial';
+import TestimonialsSlider from '@/components/Testimonial';
+
+
+const testimonialsData = [
+  {
+    name: 'Priya Sharma',
+    role: 'Mother of Aryan',
+    quote:
+      'Preksis has been a wonderful experience for my son. The teachers are caring and the learning environment is stimulating. He looks forward to going to school every day!',
+    imageSrc: '/images/priya.jpg', 
+  },
+  {
+    name: 'Roohi Kumar',
+    role: 'Mother of Siya',
+    quote:
+      'We are so impressed with the progress Siya has made at Preksis. Her communication skills and confidence have grown significantly. Highly recommend!',
+    imageSrc: '/images/roohi.jpg',
+  },
+  {
+    name: 'Sneha Patel',
+    role: 'Mother of Rohan',
+    quote:
+      'The curriculum at Preksis is fantastic. Rohan loves the hands-on activities and the focus on creativity. It’s a nurturing and supportive environment.',
+    imageSrc: '/images/sneha.jpg', // Replace with actual image path
+  },
+  {
+    name: 'Amita Verma',
+    role: 'Mother of Isha',
+    quote:
+      'The teachers at Preksis are dedicated and truly care about each child’s development. Isha has blossomed socially and academically since joining.',
+    imageSrc: '/images/amita.jpg', // Replace with actual image path
+  },
+];
 
 const Home: NextPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,7 +70,7 @@ const Home: NextPage = () => {
 
           <section className="py-52">
             <div className="container mx-auto text-center">
-              <p className="text-lg text-white">We provide a nurturing and educational environment for young learners.</p>
+              <p className="text-xl text-white">We provide a nurturing and educational environment for young learners.</p>
             </div>
           </section>
 
@@ -47,6 +81,9 @@ const Home: NextPage = () => {
               <h2 className="text-3xl font-bold mb-8">Our Programs</h2>
               <p>Details about your preschool programs here...</p>
             </div>
+          </section>
+          <section>
+          <TestimonialsSlider testimonials={testimonialsData} transitionDuration={4000} />
           </section>
         </main>
 
